@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><b>{{title}}</b></mat-card-title>
+  </mat-card-header>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <mat-card-content>
+      <div *ngFor="let question of questions" class="form-row">
+        <app-question [question]="question" [form]="form"></app-question>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button id=submit type="submit" mat-button [disabled]="!form.valid">SAVE</button>
+      <ng-content></ng-content>
+    </mat-card-actions>
+  </form>
+</mat-card>
