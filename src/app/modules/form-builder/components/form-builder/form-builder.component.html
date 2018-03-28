@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <b>{{title}}</b>
+    </mat-card-title>
+  </mat-card-header>
+  <form (ngSubmit)="formSubmit.emit(form)" [formGroup]="form">
+    <mat-card-content>
+      <div *ngFor="let question of questions">
+        <app-question [question]="question" [form]="form"></app-question>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button id=submit type="submit" mat-button [disabled]="!form.valid">SAVE</button>
+      <button type="button" mat-button (click)="onReset()">RESET</button>
+      <ng-content></ng-content>
+    </mat-card-actions>
+  </form>
+</mat-card>

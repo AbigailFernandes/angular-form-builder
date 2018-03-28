@@ -1,6 +1,10 @@
 <div>
-  <app-form-builder [questions]="questions" (value)="display($event)" (rawValue)="display($event)"></app-form-builder>
+  <angular-form-builder [questions]="questions" (formSubmit)="display($event)" (formReset)="display($event)"></angular-form-builder>
 </div>
 <div *ngIf="payLoad" class="form-row">
-  <strong>Saved the following values</strong><br>{{payLoad}}
+  <strong>Saved the following values</strong>
+  <br>{{payLoad}}
+</div>
+<div>
+  <angular-form-viewer [questions]="questions"></angular-form-viewer>
 </div>

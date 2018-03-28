@@ -1,6 +1,6 @@
 {
   "name": "angular-form-builder",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

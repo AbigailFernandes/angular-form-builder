@@ -3,9 +3,11 @@
   <div [ngSwitch]="question.controlType">
 
     <!-- Input field -->
-    <mat-form-field *ngSwitchCase="'input'" class="full-width">
-      <input matInput [formControlName]="question.key" [id]="question.key" [type]="question.type" [placeholder]="question.label">
-    </mat-form-field>
+    <div class="padding" *ngSwitchCase="'input'">
+      <mat-form-field [hintLabel]="question.hintLabel" class="full-width">
+        <input matInput [formControlName]="question.key" [id]="question.key" [type]="question.type" [placeholder]="question.label">
+      </mat-form-field>
+    </div>
 
     <!-- Radio button -->
     <div class="padding" *ngSwitchCase="'radio'">
@@ -27,6 +29,7 @@
           {{ option.value }}
         </mat-option>
       </mat-select>
+      <mat-hint>{{question.hintLabel }}</mat-hint>
     </mat-form-field>
 
   </div>

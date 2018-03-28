@@ -6,7 +6,8 @@ export class FormControlBase<T> {
   order: number;
   controlType: string;
   validators: Validator;
-
+  options: { key: string; value: string }[] = [];
+  hintLabel: string;
   constructor(
     options: {
       value?: T;
@@ -16,6 +17,8 @@ export class FormControlBase<T> {
       order?: number;
       controlType?: string;
       validators?: Validator;
+      options?: { key: string; value: string }[];
+      hintLabel?: string;
     } = {},
   ) {
     this.value = options.value;
@@ -25,6 +28,8 @@ export class FormControlBase<T> {
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
     this.validators = options.validators || null;
+    this.options = options['options'] || [];
+    this.hintLabel = options.hintLabel || null;
   }
 }
 
