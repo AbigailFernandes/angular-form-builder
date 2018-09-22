@@ -127,17 +127,6 @@ minLength | number | Validator that requires controls to have a value of a minim
 maxLength | number | Validator that requires controls to have a value of a maximum length.
 
 
-
-
-## Running the Sample
-
-```bash
-$ npm install
-$ npm start
-```
-Then navigate to http://localhost:8080/ in your browser and you should be able to see the form builder in action. You can play around with the form builder by modifying the form-builder-schema in app.service.ts.
-
-
 ## Running the Sample
 
 **1. Clone the Git repository**:
